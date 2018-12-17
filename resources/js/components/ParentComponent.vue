@@ -6,8 +6,10 @@
                     <div class="card-header">First Vue</div>
 
                     <div class="card-body">
-                        <child-component v-model="date"></child-component>
-                        <p>親: {{date}}</p>
+                        <child-component 
+                            v-bind:name.sync="name"
+                            v-bind:hp.sync="hp"></child-component>
+                        <p>親: name: {{name}} hp: {{hp}}</p>
                     </div>
                 </div>
             </div>
@@ -23,7 +25,8 @@
         },
         data() {
             return {
-                date: '2018-02-02',
+                name: 'スライム',
+                hp: 100,
             }
         },
     }
